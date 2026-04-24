@@ -2,7 +2,7 @@ package com.ppva.model.usuarios;
 
 import java.time.LocalDate;
 
-public class Cliente extends Usuario{
+public class Cliente extends Usuario implements java.io.Serializable{
 
     private int credito;
     private boolean penalizado;

@@ -1,10 +1,11 @@
 package com.ppva;
 
-import java.time.DateTimeException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 import java.time.format.DateTimeParseException;
 import java.util.Scanner;
+
+import com.ppva.model.persistence.GestionFicheros;
 import com.ppva.model.usuarios.Cliente;
 
 public class Launcher {
@@ -41,9 +42,8 @@ public class Launcher {
         System.out.print("Fecha de nacimiento (dd/mm/yyyy): ");
 
         try {
-            // Usamos el formato que indicaste
             fechaNac = LocalDate.parse(scTexto.nextLine(), DateTimeFormatter.ofPattern("dd/MM/yyyy"));
-        } catch (DateTimeParseException e) { // Es más específico que DateTimeException
+        } catch (DateTimeParseException e) {
             System.out.println("Error: Formato incorrecto. Se asignará la fecha de hoy por defecto.");
             fechaNac = LocalDate.now();
         }
@@ -60,9 +60,11 @@ public class Launcher {
 
         // 4. Creamos el cliente con TODO
         Cliente cli1 = new Cliente(dni, nombre, apellidos, "600000000", fechaNac, "Calle Falsa 123", email, contrasenya, true, credito, false);
-
+        GestionFicheros.GuardarCliente(cli1);
+        // GestionFicheros.LeerCliente(cli1);
         System.out.println("\n--- Cliente registrado con éxito ---");
         System.out.println(cli1.mostrarDatosUsuario());
+
 
         scTexto.close();
         scNumero.close();

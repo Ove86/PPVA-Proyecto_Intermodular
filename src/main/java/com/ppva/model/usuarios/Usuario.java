@@ -2,9 +2,8 @@ package com.ppva.model.usuarios;
 
 
 import java.time.LocalDate;
-import java.util.regex.Pattern;
 
-public abstract class Usuario {
+public abstract class Usuario implements java.io.Serializable {
 
     private String dni;
     private String nombre;

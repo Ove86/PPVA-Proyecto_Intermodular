@@ -2,7 +2,7 @@ package com.ppva.model.usuarios;
 
 import java.time.LocalDate;
 
-public class Administrador extends Usuario{
+public class Administrador extends Usuario implements java.io.Serializable{
 
     private LocalDate fechaNombramiento;
     private LocalDate fechaCese;
