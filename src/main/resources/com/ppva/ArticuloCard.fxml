@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Text?>
+
+<VBox xmlns="http://javafx.com/javafx/17"
+      xmlns:fx="http://javafx.com/fxml/1"
+      fx:controller="com.example.demo.controller.TarjetaArticuloController"
+      styleClass="tarjeta"
+      onMouseClicked="#handleClick"
+      spacing="10">
+
+    <padding>
+        <Insets top="12" right="12" bottom="12" left="12"/>
+    </padding>
+
+    <!-- Zona de la imagen -->
+    <StackPane styleClass="imagen-container">
+        <Rectangle width="200" height="150" arcWidth="10" arcHeight="10"
+                   styleClass="imagen-placeholder"/>
+        <Label fx:id="imagenLabel" text="🛠️" styleClass="emoji-imagen"/>
+
+        <!-- Badge de estado -->
+        <Label fx:id="estadoBadge" text="Disponible" styleClass="badge-disponible"
+               StackPane.alignment="TOP_RIGHT">
+            <StackPane.margin>
+                <Insets right="8" top="8"/>
+            </StackPane.margin>
+        </Label>
+    </StackPane>
+
+    <!-- Info del artículo -->
+    <VBox spacing="5">
+        <Label fx:id="nombreArticulo" styleClass="nombre-articulo" wrapText="true"/>
+        <Label fx:id="categoriaArticulo" styleClass="categoria-articulo"/>
+
+        <HBox spacing="10" alignment="CENTER_LEFT">
+            <Label fx:id="creditoLabel" styleClass="credito">
+                <graphic>
+                    <Label text="💎"/>
+                </graphic>
+            </Label>
+            <Label fx:id="ubicacionLabel" styleClass="ubicacion">
+                <graphic>
+                    <Label text="📍"/>
+                </graphic>
+            </Label>
+        </HBox>
+    </VBox>
+
+    <!-- Botón rápido -->
+    <Button fx:id="reservarBtn" text="Reservar" styleClass="btn-reservar"
+            onAction="#handleReservar" maxWidth="Infinity"/>
+</VBox>

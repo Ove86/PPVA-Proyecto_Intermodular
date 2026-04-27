@@ -1,9 +1,10 @@
 package com.ppva.model.usuarios;
 
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public abstract class Usuario implements java.io.Serializable {
+public abstract class Usuario implements Serializable {
 
     private String dni;
     private String nombre;

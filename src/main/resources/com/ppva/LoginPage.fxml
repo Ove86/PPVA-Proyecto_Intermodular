@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.ppva.controller.IndexPageController"
+            stylesheets="@styles.css">
+
+    <center>
+        <VBox alignment="CENTER" spacing="15">
+            <padding>
+                <Insets top="40" right="40" bottom="40" left="40"/>
+            </padding>
+
+            <Label text="PPVA - Préstamos entre Vecinos" styleClass="titulo"/>
+            <GridPane hgap="10" vgap="10" alignment="CENTER">
+                <Label text="DNI:" GridPane.columnIndex="0" GridPane.rowIndex="0"/>
+                <TextField fx:id="dniField" promptText="12345678A" GridPane.columnIndex="1" GridPane.rowIndex="0"/>
+
+                <Label text="Contraseña:" GridPane.columnIndex="0" GridPane.rowIndex="1"/>
+                <PasswordField fx:id="passwordField" GridPane.columnIndex="1" GridPane.rowIndex="1"/>
+            </GridPane>
+
+            <HBox spacing="15" alignment="CENTER">
+                <Button text="Iniciar sesión" onAction="#handleLogin" styleClass="btn-primario"/>
+                <Button text="Entrar como visitante" onAction="#handleVisitante" styleClass="btn-secundario"/>
+            </HBox>
+
+            <Label text="¿Aún no eres socio? Contacta con el administrador" styleClass="texto-info"/>
+            <Label fx:id="mensajeError" styleClass="texto-error" wrapText="true"/>
+        </VBox>
+    </center>
+</BorderPane>

@@ -1,0 +1,242 @@
+/* VARIABLES */
+.root {
+    -fx-font-family: 'Inter', 'Segoe UI', system, -apple-system, sans-serif;
+    -fx-background-color: #f5f7fb;
+}
+
+/* NAVBAR */
+.navbar {
+    -fx-background-color: white;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.05), 10, 0, 0, 2);
+}
+
+.logo {
+    -fx-font-size: 20px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #1a73e8;
+}
+
+.buscador {
+    -fx-background-color: #f0f2f5;
+    -fx-background-radius: 25;
+    -fx-padding: 10 15 10 15;
+    -fx-font-size: 14px;
+    -fx-border: none;
+    -fx-prompt-text-fill: #8e9aaf;
+}
+
+.buscador:focused {
+    -fx-background-color: white;
+    -fx-border-color: #1a73e8;
+    -fx-border-width: 2;
+    -fx-border-radius: 25;
+}
+
+.btn-buscar, .btn-outline, .btn-text, btn-iniciarSesion {
+    -fx-background-color: transparent;
+    -fx-text-fill: #5f6c84;
+    -fx-font-size: 14px;
+    -fx-padding: 8 16 8 16;
+    -fx-background-radius: 20;
+    -fx-cursor: hand;
+}
+
+.btn-buscar {
+    -fx-background-color: #1a73e8;
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+}
+
+.btn-iniciarSesion {
+    -fx-background-color: #27F584;
+    -fx-text-fill: black;
+    -fx-font-weight: bold;
+}
+
+.btn-buscar:hover {
+    -fx-background-color: #1557b0;
+}
+
+.btn-iniciarSesion:hover {
+    -fx-background-color: #21CF6F;
+}
+
+.btn-outline:hover {
+    -fx-background-color: #f0f2f5;
+}
+
+.saldo-badge {
+    -fx-background-color: #e8f0fe;
+    -fx-text-fill: #1a73e8;
+    -fx-padding: 5 12 5 12;
+    -fx-background-radius: 20;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+}
+
+/* === PANEL DE FILTROS (lateral) === */
+.filtros-panel {
+    -fx-background-color: white;
+    -fx-pref-width: 200;
+    -fx-border-color: #e8ecf2;
+    -fx-border-width: 0 1 0 0;
+}
+
+.filtro-titulo {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #202124;
+}
+
+.radio-filtro, .radio-filtro > .radio {
+    -fx-font-size: 13px;
+    -fx-text-fill: #5f6c84;
+}
+
+.radio-filtro:selected {
+    -fx-text-fill: #1a73e8;
+}
+
+/* === SCROLL DEL CATÁLOGO === */
+.scroll-catalogo {
+    -fx-background-color: transparent;
+    -fx-background: transparent;
+}
+
+.scroll-catalogo > .viewport {
+    -fx-background-color: #f5f7fb;
+}
+
+.scroll-bar:vertical {
+    -fx-background-color: transparent;
+}
+
+/* === TARJETAS (CARDS) === */
+.tarjeta {
+    -fx-background-color: white;
+    -fx-background-radius: 16;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.08), 12, 0, 0, 4);
+    -fx-pref-width: 220;
+    -fx-cursor: hand;
+    -fx-transition: all 0.2s ease;
+}
+
+.tarjeta:hover {
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.15), 20, 0, 0, 8);
+    -fx-translate-y: -2;
+}
+
+.imagen-container {
+    -fx-alignment: center;
+}
+
+.imagen-placeholder {
+    -fx-fill: #f0f2f5;
+    -fx-arc-width: 12;
+    -fx-arc-height: 12;
+}
+
+.nombre-articulo {
+    -fx-font-size: 15px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #202124;
+    -fx-wrap-text: true;
+}
+
+.categoria-articulo {
+    -fx-font-size: 12px;
+    -fx-text-fill: #8e9aaf;
+}
+
+.credito {
+    -fx-font-size: 14px;
+    -fx-font-weight: bold;
+    -fx-text-fill: #f9a825;
+}
+
+.ubicacion {
+    -fx-font-size: 12px;
+    -fx-text-fill: #5f6c84;
+}
+
+/* Badges de estado */
+.badge-disponible {
+    -fx-background-color: #34a853;
+    -fx-text-fill: white;
+    -fx-padding: 4 10 4 10;
+    -fx-background-radius: 20;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.badge-prestado {
+    -fx-background-color: #ea4335;
+    -fx-text-fill: white;
+    -fx-padding: 4 10 4 10;
+    -fx-background-radius: 20;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.badge-mantenimiento {
+    -fx-background-color: #f9a825;
+    -fx-text-fill: white;
+    -fx-padding: 4 10 4 10;
+    -fx-background-radius: 20;
+    -fx-font-size: 11px;
+    -fx-font-weight: bold;
+}
+
+.btn-reservar {
+    -fx-background-color: #1a73e8;
+    -fx-text-fill: white;
+    -fx-font-size: 13px;
+    -fx-font-weight: bold;
+    -fx-padding: 8;
+    -fx-background-radius: 12;
+    -fx-cursor: hand;
+}
+
+.btn-reservar:hover {
+    -fx-background-color: #1557b0;
+}
+
+.resultados-info {
+    -fx-font-size: 14px;
+    -fx-text-fill: #5f6c84;
+    -fx-padding: 0 0 10 0;
+}
+
+/* LOGIN */
+.login-container {
+    -fx-background-color: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.login-card {
+    -fx-background-color: white;
+    -fx-background-radius: 24;
+    -fx-effect: dropshadow(gaussian, rgba(0,0,0,0.2), 25, 0, 0, 10);
+    -fx-padding: 40;
+}
+
+.campo-login {
+    -fx-background-color: #f0f2f5;
+    -fx-background-radius: 12;
+    -fx-padding: 12;
+    -fx-font-size: 14px;
+}
+
+/* === RESPONSIVE: ajustes para ventanas pequeñas === */
+@media (max-width: 800px) {
+    .filtros-panel {
+        -fx-pref-width: 200;
+    }
+
+    .tarjeta {
+        -fx-pref-width: 180;
+    }
+
+    .emoji-imagen {
+        -fx-font-size: 36px;
+    }
+}

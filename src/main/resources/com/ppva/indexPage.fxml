@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.RadioButton?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.control.ToggleGroup?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+
+<BorderPane stylesheets="@styles.css" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.ppva.controller.IndexPageController">
+    <top>
+        <HBox fx:id="header" alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="694.0" styleClass="navbar" stylesheets="@styles.css" BorderPane.alignment="CENTER">
+            <children>
+                <HBox alignment="CENTER_LEFT" prefHeight="70.0" prefWidth="125.0">
+                    <children>
+                        <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true">
+                            <HBox.margin>
+                                <Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />
+                            </HBox.margin>
+                            <image>
+                                <Image url="@img/logoPPVA.png" />
+                            </image>
+                        </ImageView>
+                        <Label graphicTextGap="10.0" styleClass="logo" text="PPVA" />
+                    </children>
+                    <opaqueInsets>
+                        <Insets />
+                    </opaqueInsets>
+                    <padding>
+                        <Insets left="10.0" />
+                    </padding>
+                </HBox>
+                <HBox alignment="CENTER" prefHeight="70.0" prefWidth="460.0" spacing="10.0">
+                    <children>
+                        <TextField fx:id="buscadorField" prefHeight="42.0" prefWidth="290.0" promptText="🔍 Buscar herramientas o materiales..." styleClass="buscador" />
+                        <Button alignment="CENTER" contentDisplay="CENTER" onAction="#handleBuscar" prefHeight="40.0" prefWidth="87.0" styleClass="btn-buscar" text="Buscar" />
+                    </children>
+                </HBox>
+                <HBox fx:id="btnIniciarSesion" alignment="CENTER_RIGHT" prefHeight="70.0" prefWidth="130.0" spacing="10">
+                    <children>
+                        <Button alignment="CENTER" contentDisplay="CENTER" onAction="#iniciarSesion" prefHeight="40.0" prefWidth="96.0" styleClass="btn-iniciarSesion" text="Iniciar Sesion" textAlignment="RIGHT" textFill="#3b3b3b" />
+                    </children>
+                    <padding>
+                        <Insets right="10.0" />
+                    </padding>
+                </HBox>
+            </children>
+        </HBox>
+    </top>
+
+    <left>
+        <VBox fx:id="sidebar" prefHeight="422.0" prefWidth="177.0" spacing="15" styleClass="filtros-panel">
+            <padding>
+                <Insets bottom="20" left="15" right="15" top="20" />
+            </padding>
+
+            <Label styleClass="filtro-titulo" text="Categorías" />
+            <VBox spacing="8">
+                <RadioButton fx:id="filtroTodos" onAction="#handleFiltrar" selected="true" styleClass="radio-filtro" text="Todos">
+               <toggleGroup>
+                  <ToggleGroup fx:id="radCategorias" />
+               </toggleGroup></RadioButton>
+                <RadioButton fx:id="filtroManuales" onAction="#handleFiltrar" text="Herramientas manuales" toggleGroup="$radCategorias" />
+                <RadioButton fx:id="filtroElectricos" onAction="#handleFiltrar" text="Equipos eléctricos" toggleGroup="$radCategorias" />
+                <RadioButton fx:id="filtroComunitario" onAction="#handleFiltrar" text="Equipamiento comunitario" toggleGroup="$radCategorias" />
+                <RadioButton fx:id="filtroConstruccion" onAction="#handleFiltrar" text="Materiales construcción" toggleGroup="$radCategorias" />
+                <RadioButton fx:id="filtroLimpieza" onAction="#handleFiltrar" text="Productos limpieza" toggleGroup="$radCategorias" />
+            </VBox>
+
+            <Separator />
+
+            <Label styleClass="filtro-titulo" text="Tipo" />
+            <VBox spacing="8">
+                <CheckBox fx:id="filtroFungible" onAction="#handleFiltrar" selected="true" text="Fungibles" />
+                <CheckBox fx:id="filtroNoFungible" onAction="#handleFiltrar" selected="true" text="No fungibles" />
+            </VBox>
+
+            <Separator />
+
+            <Label styleClass="filtro-titulo" text="Disponibilidad" />
+            <VBox spacing="8">
+                <CheckBox fx:id="filtroDisponible" onAction="#handleFiltrar" selected="true" text="Disponible ahora" />
+            </VBox>
+        </VBox>
+    </left>
+
+    <center>
+        <ScrollPane fx:id="pantPrincipal" fitToWidth="true" styleClass="scroll-catalogo">
+            <content>
+                <VBox fx:id="contenedorArticulos" prefHeight="430.0" prefWidth="492.0" spacing="20">
+                    <padding>
+                        <Insets bottom="20" left="20" right="20" top="20" />
+                    </padding>
+                </VBox>
+            </content>
+        </ScrollPane>
+    </center>
+
+</BorderPane>

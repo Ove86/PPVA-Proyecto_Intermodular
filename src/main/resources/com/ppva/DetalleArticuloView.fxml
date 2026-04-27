@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.image.ImageView?>
+
+<BorderPane xmlns="http://javafx.com/javafx/17"
+            xmlns:fx="http://javafx.com/fxml/1"
+            fx:controller="com.example.demo.controller.DetalleArticuloController"
+            stylesheets="@styles.css">
+
+    <center>
+        <VBox spacing="15">
+            <padding>
+                <Insets top="20" right="20" bottom="20" left="20"/>
+            </padding>
+
+            <Label fx:id="tituloArticulo" styleClass="titulo-articulo"/>
+
+            <HBox spacing="20">
+                <ImageView fx:id="imagenArticulo" fitWidth="200" fitHeight="200" preserveRatio="true"/>
+                <VBox spacing="10">
+                    <Label fx:id="descripcion" wrapText="true"/>
+                    <Label fx:id="categoria"/>
+                    <Label fx:id="disponibilidad"/>
+                    <Label fx:id="creditoNecesario"/>
+                    <Label fx:id="ubicacion"/>
+                </VBox>
+            </HBox>
+
+            <HBox spacing="15" alignment="CENTER">
+                <DatePicker fx:id="fechaInicio" promptText="Fecha inicio"/>
+                <DatePicker fx:id="fechaFin" promptText="Fecha devolución"/>
+                <Button fx:id="reservarBtn" text="Reservar" onAction="#handleReservar"
+                        styleClass="btn-primario"/>
+                <Button text="Volver" onAction="#handleVolver"/>
+            </HBox>
+
+            <Label fx:id="mensajeInfo" styleClass="texto-info" wrapText="true"/>
+        </VBox>
+    </center>
+</BorderPane>
